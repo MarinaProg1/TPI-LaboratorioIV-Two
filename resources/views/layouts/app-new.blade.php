@@ -183,8 +183,8 @@
                     <!-- Logo Header -->
                     <div class="logo-header" data-background-color="dark">
                         <a href="index.html" class="logo">
-                            <img src="assets/img/kaiadmin/logo_light.svg" alt="navbar brand" class="navbar-brand"
-                                height="20" />
+                            <img src="{{ asset('') }}assets/images/logo_light.svg" alt="navbar brand"
+                                class="navbar-brand" height="20" />
                         </a>
                         <div class="nav-toggle">
                             <button class="btn btn-toggle toggle-sidebar">
@@ -248,7 +248,8 @@
                                             <div class="notif-center">
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="assets/img/jm_denis.jpg" alt="Img Profile" />
+                                                        <img src="{{ asset('') }}assets/images/jm_denis.jpg"
+                                                            alt="Img Profile" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Jimmy Denis</span>
@@ -258,7 +259,8 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="assets/img/chadengle.jpg" alt="Img Profile" />
+                                                        <img src="{{ asset('') }}assets/images/chadengle.jpg"
+                                                            alt="Img Profile" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Chad</span>
@@ -268,7 +270,8 @@
                                                 </a>
                                                 <a href="#">
                                                     <div class="notif-img">
-                                                        <img src="assets/img/mlane.jpg" alt="Img Profile" />
+                                                        <img src="{{ asset('') }}assets/images/mlane.jpg"
+                                                            alt="Img Profile" />
                                                     </div>
                                                     <div class="notif-content">
                                                         <span class="subject">Jhon Doe</span>
@@ -446,8 +449,8 @@
                                         <li>
                                             <div class="user-box">
                                                 <div class="avatar-lg">
-                                                    <img src="assets/img/profile.jpg" alt="image profile"
-                                                        class="avatar-img rounded" />
+                                                    <img src="{{ asset('') }}assets/images/profile.jpg"
+                                                        alt="image profile" class="avatar-img rounded" />
                                                 </div>
                                                 <div class="u-text">
                                                     <h4>Hizrian</h4>
@@ -486,11 +489,7 @@
                 <div class="container-fluid d-flex justify-content-between">
                     <nav class="pull-left">
                         <ul class="nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="http://www.themekita.com">
-                                    ThemeKita
-                                </a>
-                            </li>
+
                             <li class="nav-item">
                                 <a class="nav-link" href="#"> Help </a>
                             </li>
@@ -503,10 +502,7 @@
                         2024, made with <i class="fa fa-heart heart text-danger"></i> by
                         <a href="http://www.themekita.com">ThemeKita</a>
                     </div>
-                    <div>
-                        Distributed by
-                        <a target="_blank" href="https://themewagon.com/">ThemeWagon</a>.
-                    </div>
+
                 </div>
             </footer>
         </div>
