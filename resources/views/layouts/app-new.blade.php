@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Tienda online UTN</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
-    <link rel="icon" href="{{ asset('') }}assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('') }}assets/images/LogoGris.png" type="image/x-icon" />
 
     <!-- Fonts and icons -->
     <script src="{{ asset('') }}assets/js/webfont.min.js"></script>
@@ -40,13 +40,13 @@
 <body>
     <div class="wrapper">
         <!-- Sidebar -->
-        <div class="sidebar" data-background-color="dark">
+        <div class="sidebar" style="background-color: rgb(0, 1, 1 )">
             <div class="sidebar-logo">
                 <!-- Logo Header -->
-                <div class="logo-header" data-background-color="dark">
+                <div class="logo-header" style="background-color: rgb(0, 1, 1 )">
                     <a href="index.html" class="logo">
-                        <img src="{{ asset('') }}assets/images/logo_light.svg" alt="navbar brand"
-                            class="navbar-brand" height="20" />
+                        <img src="{{ asset('') }}assets/images/LogoNegro.png" alt="navbar brand" width="160"
+                            height="60" />
                     </a>
                     <div class="nav-toggle">
                         <button class="btn btn-toggle toggle-sidebar">
@@ -167,14 +167,13 @@
             </div>
         </div>
         <!-- End Sidebar -->
-
         <div class="main-panel">
             <div class="main-header">
                 <div class="main-header-logo">
                     <!-- Logo Header -->
                     <div class="logo-header" data-background-color="dark">
                         <a href="index.html" class="logo">
-                            <img src="{{ asset('') }}assets/images/logo_light.svg" alt="navbar brand"
+                            <img src="{{ asset('') }}assets/images/LogoTiendaUTN" alt="navbar brand"
                                 class="navbar-brand" height="20" />
                         </a>
                         <div class="nav-toggle">
@@ -192,7 +191,8 @@
                     <!-- End Logo Header -->
                 </div>
                 <!-- Navbar Header -->
-                <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+                <nav class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+                    style="background-color: rgb(245, 176, 65)">
                     <div class="container-fluid">
                         <nav
                             class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex">
@@ -216,8 +216,6 @@
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
                                 Agregar
                             </li>
-
-
                             <li class="nav-item topbar-user dropdown hidden-caret">
                                 @if (Route::has('login'))
                                     <nav class="-mx-3 flex flex-1 justify-end">
@@ -231,7 +229,6 @@
                                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
                                                 Login
                                             </a>
-
                                             @if (Route::has('register'))
                                                 <a href="{{ route('register') }}"
                                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
@@ -242,7 +239,6 @@
                                     </nav>
                                 @endif
                                 </a>
-
                             </li>
                         </ul>
                     </div>
