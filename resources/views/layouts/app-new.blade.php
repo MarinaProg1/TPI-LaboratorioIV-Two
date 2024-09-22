@@ -6,6 +6,7 @@
     <title>Tienda online UTN</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <link rel="icon" href="{{ asset('') }}assets/images/LogoGris.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Fonts and icons -->
     <script src="{{ asset('') }}assets/js/webfont.min.js"></script>
@@ -21,7 +22,7 @@
                     "Font Awesome 5 Brands",
                     "simple-line-icons",
                 ],
-                urls: ["assets/css/fonts.min.css"],
+                urls: [{{ asset('assets/css/fonts.min.css') }}],
             },
             active: function() {
                 sessionStorage.fonts = true;
@@ -173,7 +174,7 @@
                     <!-- Logo Header -->
                     <div class="logo-header" data-background-color="dark">
                         <a href="index.html" class="logo">
-                            <img src="{{ asset('') }}assets/images/LogoTiendaUTN" alt="navbar brand"
+                            <img src="{{ asset('') }}assets/images/LogoNegro.png" alt="navbar brand"
                                 class="navbar-brand" height="20" />
                         </a>
                         <div class="nav-toggle">
@@ -208,13 +209,16 @@
 
                         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
-                                Agregar
+                                <i class="fas fa-folder"></i>
+                                Categorias
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
-                                Agregar
+                                <i class="fas fa-box"></i>
+                                Productos
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
-                                Agregar
+                                <i class="fas fa-shopping-cart"></i>
+                                Carrito
                             </li>
                             <li class="nav-item topbar-user dropdown hidden-caret">
                                 @if (Route::has('login'))
@@ -227,11 +231,14 @@
                                         @else
                                             <a href="{{ route('login') }}"
                                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                                <i class="fas fa-sign-in-alt"></i>
                                                 Login
                                             </a>
                                             @if (Route::has('register'))
                                                 <a href="{{ route('register') }}"
                                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                                                    <i class="fas fa-user-plus"></i>
+
                                                     Register
                                                 </a>
                                             @endif
@@ -282,7 +289,7 @@
             <script src="{{ asset('') }}assets/js/jquery.scrollbar.min.js"></script>
 
             <!-- Chart JS -->
-            <script src="{{ asset('') }}assets/js/chart.js/chart.min.js"></script>
+            <script src="{{ asset('') }}assets/js/chart.min.js"></script>
 
             <!-- jQuery Sparkline -->
             <script src="{{ asset('') }}assets/js/jquery.sparkline.min.js"></script>
@@ -297,8 +304,8 @@
             <script src="{{ asset('') }}assets/js/bootstrap-notify.min.js"></script>
 
             <!-- jQuery Vector Maps -->
-            <script src="{{ asset('') }}assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
-            <script src="{{ asset('') }}assets/js/plugin/jsvectormap/world.js"></script>
+            <script src="{{ asset('') }}assets/js/jsvectormap.min.js"></script>
+            <script src="{{ asset('') }}assets/js/world.js"></script>
 
             <!-- Sweet Alert -->
             <script src="{{ asset('') }}assets/js/sweetalert.min.js"></script>
