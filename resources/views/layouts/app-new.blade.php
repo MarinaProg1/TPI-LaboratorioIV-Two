@@ -68,73 +68,55 @@
                     <ul class="nav nav-secondary">
                         <li class="nav-item active">
                             <a data-bs-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
-                                <i class="fas fa-home"></i>
-                                <p>Panel lateral</p>
-                                <span class="caret"></span>
+                                <i class="fas fa-home" style="color: orange;"></i>
+                                <p>Inicio</p>
                             </a>
-
                         </li>
-                        <li class="nav-section">
-                            <span class="sidebar-mini-icon">
-                                <i class="fa fa-ellipsis-h"></i>
-                            </span>
-                            <h4 class="text-section">Components</h4>
-                        </li>
-                        <li class="nav-item">
-                            < </li>
                         <li class="nav-item">
                             <a data-bs-toggle="collapse" href="#maps">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <p>Maps</p>
+                                <i class="fas fa-list"style="color: orange;"></i>
+                                <p>Lista de productos</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="maps">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a href="maps/googlemaps.html">
-                                            <span class="sub-item">Google Maps</span>
+                                            <span class="sub-item">Nuevos productos</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a href="maps/jsvectormap.html">
-                                            <span class="sub-item">Jsvectormap</span>
+                                            <span class="sub-item">Todos los procutos</span>
                                         </a>
                                     </li>
                                 </ul>
                             </div>
                         </li>
-                        <li class="nav-item">
 
-                        </li>
-                        <li class="nav-item">
-
-                        </li>
-                        <li class="nav-item">
-
-                        </li>
                         <li class="nav-item">
                             <a data-bs-toggle="collapse" href="#submenu">
-                                <i class="fas fa-bars"></i>
-                                <p>Menu Levels</p>
+                                <i class="fas fa-folder" style="color: orange;"></i>
+                                <p>Categorias</p>
                                 <span class="caret"></span>
                             </a>
                             <div class="collapse" id="submenu">
                                 <ul class="nav nav-collapse">
                                     <li>
                                         <a data-bs-toggle="collapse" href="#subnav1">
-                                            <span class="sub-item">Level 1</span>
+                                            <span class="sub-item">categoria 1</span>
                                             <span class="caret"></span>
                                         </a>
                                         <div class="collapse" id="subnav1">
                                             <ul class="nav nav-collapse subnav">
                                                 <li>
                                                     <a href="#">
-                                                        <span class="sub-item">Level 2</span>
+                                                        <span class="sub-item">categoria 2</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="#">
-                                                        <span class="sub-item">Level 2</span>
+                                                        <span class="sub-item">categoria 3</span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -206,15 +188,20 @@
                                 <input type="text" placeholder="Search ..." class="form-control" />
                             </div>
                         </nav>
-
                         <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+                            <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
+                                <i class="fas fa-users"></i>
+                                Quienes somos
+                            </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
                                 <i class="fas fa-folder"></i>
                                 Categorias
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
-                                <i class="fas fa-box"></i>
-                                Productos
+                                <a href="{{ route('products.index') }}" class="nav-link">
+                                    <i class="fas fa-tag"></i>
+                                    Productos
+                                </a> <!-- Cierre de la etiqueta <a> agregado aquí -->
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
                                 <i class="fas fa-shopping-cart"></i>
@@ -222,44 +209,52 @@
                             </li>
                             <li class="nav-item topbar-user dropdown hidden-caret">
                                 @if (Route::has('login'))
-                                    <nav class="-mx-3 flex flex-1 justify-end">
+                                    <nav class="flex items-center">
                                         @auth
-                                            <a href="{{ url('/dashboard') }}"
+                                            <a href="{{ route('dashboard') }}"
                                                 class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                                Dashboard
+                                                {{ Auth::user()->name }}
                                             </a>
+
+                                            <!-- Formulario de Cierre de Sesión -->
+                                            <form method="POST" action="{{ route('logout') }}" class="ml-3 d-inline">
+                                                @csrf
+                                                <button type="submit"
+                                                    class="btn btn-link nav-item topbar-icon dropdown hidden-caret"
+                                                    style="text-decoration: none;">
+                                                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                                                </button>
+                                            </form>
                                         @else
                                             <a href="{{ route('login') }}"
-                                                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                                <i class="fas fa-sign-in-alt"></i>
-                                                Login
-                                            </a>
+                                                class="nav-item topbar-icon dropdown hidden-caret">
+                                                <i class="fas fa-sign-in-alt"></i> Iniciar sesión
+                                            </a> <!-- Cierre de la etiqueta <a> agregado aquí -->
                                             @if (Route::has('register'))
                                                 <a href="{{ route('register') }}"
-                                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                                                    <i class="fas fa-user-plus"></i>
-
-                                                    Register
+                                                    class="nav-item topbar-icon dropdown hidden-caret">
+                                                    <i class="fas fa-user-plus"></i> Registro
                                                 </a>
                                             @endif
                                         @endauth
                                     </nav>
                                 @endif
-                                </a>
                             </li>
                         </ul>
+
+
                     </div>
                 </nav>
                 <!-- End Navbar -->
             </div>
 
-            <div class="container">
+            <div class="container" style="background-color: rgb(245, 247, 230)">
                 <div class="page-inner">
-
+                    @yield('content')
                 </div>
             </div>
 
-            <footer class="footer">
+            <footer class="footer" style="background-color: rgb(245, 176, 65)">
                 <div class="container-fluid d-flex justify-content-between">
                     <nav class="pull-left">
                         <ul class="nav">
