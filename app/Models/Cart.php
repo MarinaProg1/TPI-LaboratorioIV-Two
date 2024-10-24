@@ -9,7 +9,6 @@ class Cart extends Model
 {
     use HasFactory;
 
-    
     protected $fillable = ['status', 'user_id'];
 
     public function user()
@@ -26,5 +25,4 @@ class Cart extends Model
     {
         return $this->hasOne(Invoice::class);
     }
-
 }
