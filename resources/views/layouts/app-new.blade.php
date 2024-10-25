@@ -72,7 +72,9 @@
                                 <p>Inicio</p>
                             </a>
                         </li>
+
                         <li class="nav-item">
+
                             <a data-bs-toggle="collapse" href="#maps">
                                 <i class="fas fa-list"style="color: orange;"></i>
                                 <p>Lista de productos</p>
@@ -143,8 +145,13 @@
                                         </a>
                                     </li>
                                 </ul>
+
+
                             </div>
                         </li>
+
+
+
                     </ul>
                 </div>
             </div>
@@ -194,8 +201,10 @@
                                 Quienes somos
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
-                                <i class="fas fa-folder"></i>
-                                Categorias
+                                <a href="{{ route('categories.index') }}" class="nav-link">
+                                    <i class="fas fa-folder"></i>
+                                    Categorias
+                                </a>
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
                                 <a href="{{ route('products.index') }}" class="nav-link">
@@ -204,9 +213,13 @@
                                 </a> <!-- Cierre de la etiqueta <a> agregado aquí -->
                             </li>
                             <li class="nav-item topbar-icon dropdown hidden-caret" style="margin-right: 35px;">
-                                <i class="fas fa-shopping-cart"></i>
-                                Carrito
+                                <a href="{{ route('cart.index') }}" class="nav-link">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Carrito
+                                </a>
                             </li>
+
+
                             <li class="nav-item topbar-user dropdown hidden-caret">
                                 @if (Route::has('login'))
                                     <nav class="flex items-center">
